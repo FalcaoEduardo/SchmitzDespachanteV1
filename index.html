@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schmitz Despachante | Caçador - SC</title>
+    <meta name="description" content="Regularize seu veículo em Caçador/SC. Licenciamento 2026, Transferência e IPVA em até 12x. Atendimento rápido no Martello.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><img src="logo.png" alt="Schmitz Despachante Logo"></a>
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#servicos">Nossos Serviços</a></li>
+                    <li><a href="#contato">Fale Conosco</a></li>
+                    <li><a href="https://wa.me/5549991368740" target="_blank" class="btn btn-primary">Orçamento Grátis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="home">
+        <div class="container hero-content">
+            <h1>Resolva a documentação do seu veículo <span>tudo em menos de uma hora.</span></h1>
+            <p>Licenciamento, Transferência, IPVA, encaminhamento de Vistorias Veiculares, Placas Automotivas e muito mais. Atendemos toda Caçador e região com agilidade.</p>
+            <div class="hero-buttons">
+                <a href="#servicos" class="btn btn-outline">Conhecer Serviços</a>
+            </div>
+        </div>
+    </section>
+    <section id="servicos">
+        <div class="container">
+            <div class="section-header"><h2>O que podemos fazer por você?</h2><p>Navegue pelas opções abaixo para entender como simplificamos sua vida.</p></div>
+            <div class="services-layout">
+                <div class="services-menu">
+                    <button class="svc-btn active" onclick="openService('primeiro_emplacamento', this)">Primeiro Emplacamento</button>
+                    <button class="svc-btn" onclick="openService('transferencia', this)">Transferência</button>
+                    <button class="svc-btn" onclick="openService('caracteristicas', this)">Mudança de Características</button>
+                    <button class="svc-btn" onclick="openService('licenciamento', this)">Licenciamento Anual</button>
+                    <button class="svc-btn" onclick="openService('ipva', this)">IPVA & Débitos</button>
+                    <button class="svc-btn" onclick="openService('cnh', this)">Renovação CNH</button>
+                    <button class="svc-btn" onclick="openService('crv', this)">2ª Via Recibo (CRV)</button>
+                    <button class="svc-btn" onclick="openService('dados', this)">Alteração de Dados</button>
+                </div>
+                <div class="services-content">
+                    <div class="highlight-card">
+                        <h3 id="svc-title">Primeiro Emplacamento</h3>
+                        <p id="svc-desc">Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.</p>
+                        <div class="card-actions">
+                            <a href="https://wa.me/5549991368740" target="_blank" target="_blank" id="svc-link" class="btn btn-primary">Saiba Mais</a>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contato">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-details">
+                    <h3>Fale com um Especialista</h3>
+                    <p style="margin-bottom: 30px; color: #666;">Chame no WhatsApp ou venha tomar um café conosco no bairro Martello.</p>
+                    <div class="info-item"><div class="icon-circle">📞</div><div><strong>Ligue Agora</strong><br><a href="tel:49991368740" style="text-decoration: none; color: inherit;">(49) 99136-8740</a></div></div>
+                    <div class="info-item"><div class="icon-circle">💬</div><div><strong>WhatsApp</strong><br><a href="https://wa.me/5549991368740" target="_blank" style="text-decoration: none; color: inherit;">(49) 99136-8740</a></div></div>
+                    <div class="info-item"><div class="icon-circle">📍</div><div><strong>Matriz</strong><br>Rod. Honorino Moro, 635 - Martello<br>Caçador - SC, 89510-620</div></div>
+                </div>
+                <div class="map-container">
+                    <h3 style="margin-bottom: 20px; font-size: 1.5rem; color: #000;">Onde Estamos</h3>
+                    <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius: 8px; border: 1px solid #ddd;" src="https://maps.google.com/maps?q=Rod.+Honorino+Moro,+635+-+Martello,+Ca%C3%A7ador+-+SC&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <a href="https://www.google.com/maps/dir//Rod.+Honorino+Moro,+635+-+Martello,+Ca%C3%A7ador+-+SC,+89510-620" target="_blank" class="btn btn-primary" style="width: 100%; margin-top: 15px; text-align: center;"><i class="fas fa-location-arrow"></i> Traçar Rota no GPS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>© 2026 <strong>Schmitz Despachante</strong>. Atendendo Caçador e Região.</p>
+            <p class="developer">Desenvolvido com <i class="fas fa-bolt"></i> por <a href="https://samistech.com.br" target="_blank"><strong>SamisTech</strong></a></p>
+        </div>
+    </footer>
+    <a href="https://wa.me/5549991368740" class="whatsapp-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script>
+        const servicesData = {
+            'primeiro_emplacamento': { title: 'Primeiro Emplacamento (0km)', desc: 'Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.', url: 'https://wa.me/5549991368740' },
+            'caracteristicas': { title: 'Mudança de Características', desc: 'Rebaixou, blindou, mudou a cor ou trocou o combustível? Regularizamos todas as modificações permitidas por lei (CSV) no documento.', url: 'https://wa.me/5549991368740' },
+            'transferencia': { title: 'Transferência de Veículo', desc: 'Comprou ou vendeu? Cuidamos da burocracia do Detran, vistoria e emissão do novo documento para garantir a segurança jurídica do negócio.', url: 'https://wa.me/5549991368740' },
+            'licenciamento': { title: 'Licenciamento Anual', desc: 'Emitimos o seu licenciamento digital (CRLV-e) no mesmo dia. Verificamos multas e bloqueios que podem estar impedindo a emissão.', url: 'https://wa.me/5549991368740' },
+            'ipva': { title: 'Parcelamento de IPVA', desc: 'Parcelamos seus débitos de IPVA, Multas e Licenciamento em até 12x no cartão de crédito. Regularize sem pesar no bolso.', url: 'https://wa.me/5549991368740' },
+            'cnh': { title: 'Renovação de CNH', desc: 'Controlamos os prazos, agendamos exames médicos e psicotécnicos e acompanhamos a emissão da sua nova CNH.', url: 'https://wa.me/5549991368740' },
+            'crv': { title: '2ª Via do Recibo (CRV)', desc: 'Perdeu o recibo de compra e venda? Realizamos o processo de vistoria e solicitação da segunda via (ATPV-e) junto ao Detran.', url: 'https://wa.me/5549991368740' },
+            'dados': { title: 'Atualização Cadastral', desc: 'Mantenha seu endereço atualizado, altere sobrenomes ou realize a inclusão/baixa de gravame (financiamento).', url: 'https://wa.me/5549991368740' }
+        };
+        function openService(serviceId, btn) {
+            const data = servicesData[serviceId]; if(!data) return;
+            const card = document.querySelector('.highlight-card'); card.style.opacity = '0.5';
+            setTimeout(() => { document.getElementById('svc-title').innerText = data.title; document.getElementById('svc-desc').innerText = data.desc; document.getElementById('svc-link').href = data.url; card.style.opacity = '1'; }, 200);
+            document.querySelectorAll('.svc-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active');
+        }
+        function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
+    </script>
+</body>
+</html>
