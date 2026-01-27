@@ -24,6 +24,7 @@
             </nav>
         </div>
     </header>
+
     <section id="home">
         <div class="container hero-content">
             <h1>Resolva a documentação do seu veículo <span>tudo em menos de uma hora.</span></h1>
@@ -33,9 +34,13 @@
             </div>
         </div>
     </section>
+
     <section id="servicos">
         <div class="container">
-            <div class="section-header"><h2>O que podemos fazer por você?</h2><p>Navegue pelas opções abaixo para entender como simplificamos sua vida.</p></div>
+            <div class="section-header">
+                <h2>O que podemos fazer por você?</h2>
+                <p>Navegue pelas opções abaixo para entender como simplificamos sua vida.</p>
+            </div>
             <div class="services-layout">
                 <div class="services-menu">
                     <button class="svc-btn active" onclick="openService('primeiro_emplacamento', this)">Primeiro Emplacamento</button>
@@ -49,16 +54,20 @@
                 </div>
                 <div class="services-content">
                     <div class="highlight-card">
+                        <img id="svc-img" src="https://garagem360.com.br/wp-content/uploads/2022/12/primeiro-emplacamento.jpg?auto=format&fit=crop&w=1000&q=80" alt="Imagem do Serviço">
+                        
                         <h3 id="svc-title">Primeiro Emplacamento</h3>
                         <p id="svc-desc">Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.</p>
                         <div class="card-actions">
-                            <a href="https://wa.me/5549991368740" target="_blank" target="_blank" id="svc-link" class="btn btn-primary">Saiba Mais</a>                            
+                            <a href="primeiro_emplacamento.html" id="svc-link" class="btn btn-primary">Saiba Mais</a>
+                            <a href="https://wa.me/5549991368740" target="_blank" style="color: #000; font-weight: bold; text-decoration: underline;"><i class="fab fa-whatsapp"></i> Tirar Dúvida</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="contato">
         <div class="container">
             <div class="contact-box">
@@ -77,28 +86,41 @@
             </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
             <p>© 2026 <strong>Schmitz Despachante</strong>. Atendendo Caçador e Região.</p>
             <p class="developer">Desenvolvido com <i class="fas fa-bolt"></i> por <a href="https://samistech.com.br" target="_blank"><strong>SamisTech</strong></a></p>
         </div>
     </footer>
+
     <a href="https://wa.me/5549991368740" class="whatsapp-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
     <script>
         const servicesData = {
-            'primeiro_emplacamento': { title: 'Primeiro Emplacamento (0km)', desc: 'Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.', url: 'https://wa.me/5549991368740' },
-            'caracteristicas': { title: 'Mudança de Características', desc: 'Rebaixou, blindou, mudou a cor ou trocou o combustível? Regularizamos todas as modificações permitidas por lei (CSV) no documento.', url: 'https://wa.me/5549991368740' },
-            'transferencia': { title: 'Transferência de Veículo', desc: 'Comprou ou vendeu? Cuidamos da burocracia do Detran, vistoria e emissão do novo documento para garantir a segurança jurídica do negócio.', url: 'https://wa.me/5549991368740' },
-            'licenciamento': { title: 'Licenciamento Anual', desc: 'Emitimos o seu licenciamento digital (CRLV-e) no mesmo dia. Verificamos multas e bloqueios que podem estar impedindo a emissão.', url: 'https://wa.me/5549991368740' },
-            'ipva': { title: 'Parcelamento de IPVA', desc: 'Parcelamos seus débitos de IPVA, Multas e Licenciamento em até 12x no cartão de crédito. Regularize sem pesar no bolso.', url: 'https://wa.me/5549991368740' },
-            'cnh': { title: 'Renovação de CNH', desc: 'Controlamos os prazos, agendamos exames médicos e psicotécnicos e acompanhamos a emissão da sua nova CNH.', url: 'https://wa.me/5549991368740' },
-            'crv': { title: '2ª Via do Recibo (CRV)', desc: 'Perdeu o recibo de compra e venda? Realizamos o processo de vistoria e solicitação da segunda via (ATPV-e) junto ao Detran.', url: 'https://wa.me/5549991368740' },
-            'dados': { title: 'Atualização Cadastral', desc: 'Mantenha seu endereço atualizado, altere sobrenomes ou realize a inclusão/baixa de gravame (financiamento).', url: 'https://wa.me/5549991368740' }
+            'primeiro_emplacamento': { title: 'Primeiro Emplacamento (0km)', desc: 'Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.', url: 'primeiro_emplacamento.html', img: 'https://garagem360.com.br/wp-content/uploads/2022/12/primeiro-emplacamento.jpg?auto=format&fit=crop&w=1000&q=80' },
+            'caracteristicas': { title: 'Mudança de Características', desc: 'Rebaixou, blindou, mudou a cor ou trocou o combustível? Regularizamos todas as modificações permitidas por lei (CSV) no documento.', url: 'caracteristicas.html', img: 'https://theforkliftstore.com/cdn/shop/products/Painter4_1080x.jpg?v=1595964438?auto=format&fit=crop&w=1000&q=80' },
+            'transferencia': { title: 'Transferência de Veículo', desc: 'Comprou ou vendeu? Cuidamos da burocracia do Detran, vistoria e emissão do novo documento para garantir a segurança jurídica do negócio.', url: 'transferencia.html', img: 'https://www.atribunamt.com.br/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-14.11.52.jpeg?auto=format&fit=crop&w=1000&q=80' },
+            'licenciamento': { title: 'Licenciamento Anual', desc: 'Emitimos o seu licenciamento digital (CRLV-e) no mesmo dia. Verificamos multas e bloqueios que podem estar impedindo a emissão.', url: 'licenciamento.html', img: 'https://i0.wp.com/www.reporteronlinelitoral.com.br/novo/wp-content/uploads/2021/01/detran1.jpg?fit=1024,768&ssl=1&w=640?auto=format&fit=crop&w=1000&q=80' },
+            'ipva': { title: 'Parcelamento de IPVA', desc: 'Parcelamos seus débitos de IPVA, Multas e Licenciamento em até 12x no cartão de crédito. Regularize sem pesar no bolso.', url: 'ipva.html', img: 'https://www.detran.pr.gov.br/sites/default/arquivos_restritos/files/imagem/migrados/galeria/477/DSC_0028.JPG?auto=format&fit=crop&w=1000&q=80' },
+            'cnh': { title: 'Renovação de CNH', desc: 'Controlamos os prazos, agendamos exames médicos e psicotécnicos e acompanhamos a emissão da sua nova CNH.', url: 'cnh.html', img: 'https://www.tvparaguacu.com.br/uploads/noticias/7154303012024085213.jpg?auto=format&fit=crop&w=1000&q=80' },
+            'crv': { title: '2ª Via do Recibo (CRV)', desc: 'Perdeu o recibo de compra e venda? Realizamos o processo de vistoria e solicitação da segunda via (ATPV-e) junto ao Detran.', url: 'crv.html', img: 'https://gringo.com.vc/wp-content/uploads/2020/10/CRV-1024x683.jpeg?auto=format&fit=crop&w=1000&q=80' },
+            'dados': { title: 'Atualização Cadastral', desc: 'Mantenha seu endereço atualizado, altere sobrenomes ou realize a inclusão/baixa de gravame (financiamento).', url: 'dados.html', img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=80' }
         };
+        
         function openService(serviceId, btn) {
             const data = servicesData[serviceId]; if(!data) return;
-            const card = document.querySelector('.highlight-card'); card.style.opacity = '0.5';
-            setTimeout(() => { document.getElementById('svc-title').innerText = data.title; document.getElementById('svc-desc').innerText = data.desc; document.getElementById('svc-link').href = data.url; card.style.opacity = '1'; }, 200);
+            const card = document.querySelector('.highlight-card');
+            card.style.opacity = '0.5';
+            setTimeout(() => {
+                document.getElementById('svc-title').innerText = data.title;
+                document.getElementById('svc-desc').innerText = data.desc;
+                document.getElementById('svc-link').href = data.url;
+                // Troca a imagem
+                document.getElementById('svc-img').src = data.img;
+                
+                card.style.opacity = '1';
+            }, 200);
             document.querySelectorAll('.svc-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active');
         }
         function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
