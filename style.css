@@ -40,9 +40,9 @@ nav { width: auto; display: flex; align-items: center; gap: 100px; }
 #home { 
     /* Mantive o seu teste.png, mas limpei o código */
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.8) 100%), url('teste.png'); 
-    background-size: cover; background-position: center; height: 90vh; display: flex; align-items: center; color: var(--white); padding-top: 80px; 
+    background-size: cover; background-position: center; height: 95vh; display: flex; align-items: center; color: var(--white); padding-top: 80px; 
 }
-.hero-content { max-width: 700px; padding-left: 20px; }
+.hero-content { max-width: 700px; padding-left: 20px;  }
 .hero-content h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
 .hero-content h1 span { color: var(--brand-yellow); } 
 .hero-content p { font-size: 1.25rem; margin-bottom: 35px; opacity: 0.9; font-weight: 300; }
