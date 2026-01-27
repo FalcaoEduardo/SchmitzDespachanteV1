@@ -26,15 +26,22 @@ h1, h2, h3, h4, .btn { font-family: 'Montserrat', sans-serif; }
 header { background: var(--white); height: 90px; box-shadow: 0 2px 20px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; align-items: center; }
 header .container { max-width: 100%; width: 100%; padding: 0 20px; display: flex; justify-content: center; }
 nav { width: auto; display: flex; align-items: center; gap: 100px; }
+
+/* LOGO CORRIGIDO (Tamanho 70px) */
 .logo { display: flex; align-items: center; }
 .logo img { max-height: 200px; width: auto; object-fit: contain; }
+
 .nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
 .nav-links a { text-decoration: none; color: #000; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; }
 .nav-links a:hover { color: var(--brand-yellow); text-shadow: 0px 0px 1px black; }
 .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: #000; }
 
 /* HERO */
-#home { background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.8) 100%), url('teste.png?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; height: 90vh; display: flex; align-items: center; color: var(--white); padding-top: 80px; }
+#home { 
+    /* Mantive o seu teste.png, mas limpei o código */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.8) 100%), url('teste.png'); 
+    background-size: cover; background-position: center; height: 90vh; display: flex; align-items: center; color: var(--white); padding-top: 80px; 
+}
 .hero-content { max-width: 700px; padding-left: 20px; }
 .hero-content h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
 .hero-content h1 span { color: var(--brand-yellow); } 
@@ -52,9 +59,104 @@ nav { width: auto; display: flex; align-items: center; gap: 100px; }
 .svc-btn:hover { background: #222; padding-left: 30px; border-color: var(--brand-yellow); color: var(--brand-yellow); }
 .svc-btn.active { background: var(--brand-yellow); color: #000; border-color: var(--brand-yellow); font-weight: 800; box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); padding-left: 30px; }
 .services-content { flex: 1; }
-.highlight-card { background: var(--white); color: #000; padding: 50px; border-radius: var(--radius); height: 100%; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border-bottom: 5px solid var(--brand-yellow); transition: opacity 0.2s ease; }
-.highlight-card h3 { font-size: 2.2rem; margin-bottom: 25px; color: #000; }
-.card-actions { display: flex; align-items: center; margin-top: 20px; gap: 20px; }
+
+/* --- CARD DE DESTAQUE (COM IMAGEM DE FUNDO) --- */
+
+/* 1. O Container Principal */
+.highlight-card {
+    /* Removemos o background branco sólido */
+    background: #000; 
+    /* Mudamos a cor do texto padrão para branco */
+    color: var(--white); 
+    
+    padding: 50px;
+    border-radius: var(--radius);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    /* Mantemos o detalhe amarelo embaixo */
+    border-bottom: 5px solid var(--brand-yellow);
+    transition: opacity 0.2s ease;
+    
+    /* ESSENCIAIS PARA O EFEITO: */
+    position: relative;  /* Para a imagem absoluta ficar presa aqui dentro */
+    overflow: hidden;    /* Para cortar a imagem nas bordas arredondadas */
+    z-index: 1;          /* Cria um contexto de empilhamento */
+}
+
+/* 2. A Película Escura (Overlay) */
+/* Isso cria uma camada preta semitransparente sobre a foto */
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+    z-index: -1; /* Fica atrás do texto, mas na frente da imagem */
+}
+
+/* 3. A Imagem de Fundo */
+.highlight-card img {
+    position: absolute; /* Sai do fluxo normal */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche tudo sem distorcer */
+    z-index: -2; /* Fica na camada mais fundo de todas */
+    
+    /* Removemos as bordas e margens antigas */
+    border-radius: 0;
+    margin-bottom: 0;
+    border: none;
+    opacity: 0.6; /* Deixa a imagem um pouco mais suave */
+}
+
+/* 4. O Conteúdo (Texto e Botões) */
+/* Forçamos eles a ficarem na frente */
+.highlight-card h3,
+.highlight-card p,
+.card-actions {
+    position: relative;
+    z-index: 2; /* Camada superior */
+}
+
+/* Ajuste de cores do título e texto para branco */
+.highlight-card h3 { 
+    font-size: 2.5rem; 
+    margin-bottom: 25px; 
+    color: var(--brand-yellow); /* Título em amarelo para destaque */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.highlight-card p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--white); /* Texto descritivo em branco */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-bottom: 40px; /* Espaço antes dos botões */
+}
+
+/* ESPAÇAMENTO DO BOTÃO */
+.card-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    /* Removemos o margin-top gigante pois o layout agora é diferente */
+    margin-top: 20px; 
+}
+
+/* ESPAÇAMENTO DO BOTÃO (2cm / 80px) */
+.card-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    margin-top: 80px; /* AQUI ESTÁ O AJUSTE DE 2CM */
+}
 
 /* PÁGINAS INTERNAS */
 .page-header { background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.85) 100%), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; height: 300px; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); margin-top: 90px; }
