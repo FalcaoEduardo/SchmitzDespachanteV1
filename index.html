@@ -1,129 +1,193 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schmitz Despachante | Caçador - SC</title>
-    <meta name="description" content="Regularize seu veículo em Caçador/SC. Licenciamento 2026, Transferência e IPVA em até 12x. Atendimento rápido no Martello.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo"><img src="logo.png" alt="Schmitz Despachante Logo"></a>
-                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#servicos">Nossos Serviços</a></li>
-                    <li><a href="#contato">Fale Conosco</a></li>
-                    <li><a href="https://wa.me/5549991368740" target="_blank" class="btn btn-primary">Orçamento Grátis</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+/* ARQUIVO DE ESTILOS: style.css - Schmitz Despachante */
+:root {
+    --brand-blue: #000000;    /* Preto Profundo */
+    --brand-yellow: #FFD700;  /* Amarelo Ouro Schmitz */
+    --accent-red: #d32f2f;
+    --bg-light: #F4F7F9;
+    --white: #ffffff;
+    --text-dark: #111111;
+    --radius: 8px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Roboto', sans-serif; color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+h1, h2, h3, h4, .btn { font-family: 'Montserrat', sans-serif; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    <section id="home">
-        <div class="container hero-content">
-            <h1>Resolva a documentação do seu veículo <span>tudo em menos de uma hora.</span></h1>
-            <p>Licenciamento, Transferência, IPVA, encaminhamento de Vistorias Veiculares, Placas Automotivas e muito mais. Atendemos toda Caçador e região com agilidade.</p>
-            <div class="hero-buttons">
-                <a href="#servicos" class="btn btn-outline">Conhecer Serviços</a>
-            </div>
-        </div>
-    </section>
+/* BOTÕES */
+.btn { display: inline-block; padding: 14px 35px; border-radius: var(--radius); text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; cursor: pointer; border: none; font-size: 0.9rem; }
+.btn-primary { background-color: var(--brand-yellow); color: #000; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
+.btn-primary:hover { transform: translateY(-2px); background-color: #ffea00; box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
+.btn-outline { border: 2px solid var(--brand-yellow); color: var(--brand-yellow); background: transparent; }
+.btn-outline:hover { background: var(--brand-yellow); color: #000; }
 
-    <section id="servicos">
-        <div class="container">
-            <div class="section-header">
-                <h2>O que podemos fazer por você?</h2>
-                <p>Navegue pelas opções abaixo para entender como simplificamos sua vida.</p>
-            </div>
-            <div class="services-layout">
-                <div class="services-menu">
-                    <button class="svc-btn active" onclick="openService('primeiro_emplacamento', this)">Primeiro Emplacamento</button>
-                    <button class="svc-btn" onclick="openService('transferencia', this)">Transferência</button>
-                    <button class="svc-btn" onclick="openService('caracteristicas', this)">Mudança de Características</button>
-                    <button class="svc-btn" onclick="openService('licenciamento', this)">Licenciamento Anual</button>
-                    <button class="svc-btn" onclick="openService('ipva', this)">IPVA & Débitos</button>
-                    <button class="svc-btn" onclick="openService('cnh', this)">Renovação CNH</button>
-                    <button class="svc-btn" onclick="openService('crv', this)">2ª Via Recibo (CRV)</button>
-                    <button class="svc-btn" onclick="openService('dados', this)">Alteração de Dados</button>
-                </div>
-                <div class="services-content">
-                    <div class="highlight-card">
-                        <img id="svc-img" src="https://garagem360.com.br/wp-content/uploads/2022/12/primeiro-emplacamento.jpg?auto=format&fit=crop&w=1000&q=80" alt="Imagem do Serviço">
-                        
-                        <h3 id="svc-title">Primeiro Emplacamento</h3>
-                        <p id="svc-desc">Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.</p>
-                        <div class="card-actions">
-                            <a href="primeiro_emplacamento.html" id="svc-link" class="btn btn-primary">Saiba Mais</a>
-                            <a href="https://wa.me/5549991368740" target="_blank" style="color: #000; font-weight: bold; text-decoration: underline;"><i class="fab fa-whatsapp"></i> Tirar Dúvida</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* HEADER */
+header { background: var(--white); height: 90px; box-shadow: 0 2px 20px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; align-items: center; }
+header .container { max-width: 100%; width: 100%; padding: 0 20px; display: flex; justify-content: center; }
+nav { width: auto; display: flex; align-items: center; gap: 100px; }
 
-    <section id="contato">
-        <div class="container">
-            <div class="contact-box">
-                <div class="contact-details">
-                    <h3>Fale com um Especialista</h3>
-                    <p style="margin-bottom: 30px; color: #666;">Chame no WhatsApp ou venha tomar um café conosco no bairro Martello.</p>
-                    <div class="info-item"><div class="icon-circle">📞</div><div><strong>Ligue Agora</strong><br><a href="tel:49991368740" style="text-decoration: none; color: inherit;">(49) 99136-8740</a></div></div>
-                    <div class="info-item"><div class="icon-circle">💬</div><div><strong>WhatsApp</strong><br><a href="https://wa.me/5549991368740" target="_blank" style="text-decoration: none; color: inherit;">(49) 99136-8740</a></div></div>
-                    <div class="info-item"><div class="icon-circle">📍</div><div><strong>Matriz</strong><br>Rod. Honorino Moro, 635 - Martello<br>Caçador - SC, 89510-620</div></div>
-                </div>
-                <div class="map-container">
-                    <h3 style="margin-bottom: 20px; font-size: 1.5rem; color: #000;">Onde Estamos</h3>
-                    <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius: 8px; border: 1px solid #ddd;" src="https://maps.google.com/maps?q=Rod.+Honorino+Moro,+635+-+Martello,+Ca%C3%A7ador+-+SC&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
-                    <a href="https://www.google.com/maps/dir//Rod.+Honorino+Moro,+635+-+Martello,+Ca%C3%A7ador+-+SC,+89510-620" target="_blank" class="btn btn-primary" style="width: 100%; margin-top: 15px; text-align: center;"><i class="fas fa-location-arrow"></i> Traçar Rota no GPS</a>
-                </div>
-            </div>
-        </div>
-    </section>
+/* LOGO CORRIGIDO (Tamanho 70px) */
+.logo { display: flex; align-items: center; }
+.logo img { max-height: 200px; width: auto; object-fit: contain; }
 
-    <footer>
-        <div class="container">
-            <p>© 2026 <strong>Schmitz Despachante</strong>. Atendendo Caçador e Região.</p>
-            <p class="developer">Desenvolvido com <i class="fas fa-bolt"></i> por <a href="https://samistech.com.br" target="_blank"><strong>SamisTech</strong></a></p>
-        </div>
-    </footer>
+.nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: #000; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; }
+.nav-links a:hover { color: var(--brand-yellow); text-shadow: 0px 0px 1px black; }
+.menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: #000; }
 
-    <a href="https://wa.me/5549991368740" class="whatsapp-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+/* HERO */
+#home { 
+    /* Mantive o seu teste.png, mas limpei o código */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.8) 100%), url('teste.png'); 
+    background-size: cover; background-position: center; height: 95vh; display: flex; align-items: center; color: var(--white); padding-top: 80px; 
+}
+.hero-content { max-width: 700px; padding-left: 20px;  }
+.hero-content h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+.hero-content h1 span { color: var(--brand-yellow); } 
+.hero-content p { font-size: 1.25rem; margin-bottom: 35px; opacity: 0.9; font-weight: 300; }
+.hero-buttons { display: flex; gap: 15px; }
 
-    <script>
-        const servicesData = {
-            'primeiro_emplacamento': { title: 'Primeiro Emplacamento (0km)', desc: 'Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.', url: 'primeiro_emplacamento.html', img: 'https://garagem360.com.br/wp-content/uploads/2022/12/primeiro-emplacamento.jpg?auto=format&fit=crop&w=1000&q=80' },
-            'caracteristicas': { title: 'Mudança de Características', desc: 'Rebaixou, blindou, mudou a cor ou trocou o combustível? Regularizamos todas as modificações permitidas por lei (CSV) no documento.', url: 'caracteristicas.html', img: 'https://theforkliftstore.com/cdn/shop/products/Painter4_1080x.jpg?v=1595964438?auto=format&fit=crop&w=1000&q=80' },
-            'transferencia': { title: 'Transferência de Veículo', desc: 'Comprou ou vendeu? Cuidamos da burocracia do Detran, vistoria e emissão do novo documento para garantir a segurança jurídica do negócio.', url: 'transferencia.html', img: 'https://www.atribunamt.com.br/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-14.11.52.jpeg?auto=format&fit=crop&w=1000&q=80' },
-            'licenciamento': { title: 'Licenciamento Anual', desc: 'Emitimos o seu licenciamento digital (CRLV-e) no mesmo dia. Verificamos multas e bloqueios que podem estar impedindo a emissão.', url: 'licenciamento.html', img: 'https://i0.wp.com/www.reporteronlinelitoral.com.br/novo/wp-content/uploads/2021/01/detran1.jpg?fit=1024,768&ssl=1&w=640?auto=format&fit=crop&w=1000&q=80' },
-            'ipva': { title: 'Parcelamento de IPVA', desc: 'Parcelamos seus débitos de IPVA, Multas e Licenciamento em até 12x no cartão de crédito. Regularize sem pesar no bolso.', url: 'ipva.html', img: 'https://www.detran.pr.gov.br/sites/default/arquivos_restritos/files/imagem/migrados/galeria/477/DSC_0028.JPG?auto=format&fit=crop&w=1000&q=80' },
-            'cnh': { title: 'Renovação de CNH', desc: 'Controlamos os prazos, agendamos exames médicos e psicotécnicos e acompanhamos a emissão da sua nova CNH.', url: 'cnh.html', img: 'https://www.tvparaguacu.com.br/uploads/noticias/7154303012024085213.jpg?auto=format&fit=crop&w=1000&q=80' },
-            'crv': { title: '2ª Via do Recibo (CRV)', desc: 'Perdeu o recibo de compra e venda? Realizamos o processo de vistoria e solicitação da segunda via (ATPV-e) junto ao Detran.', url: 'crv.html', img: 'https://gringo.com.vc/wp-content/uploads/2020/10/CRV-1024x683.jpeg?auto=format&fit=crop&w=1000&q=80' },
-            'dados': { title: 'Atualização Cadastral', desc: 'Mantenha seu endereço atualizado, altere sobrenomes ou realize a inclusão/baixa de gravame (financiamento).', url: 'dados.html', img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=80' }
-        };
-        
-        function openService(serviceId, btn) {
-            const data = servicesData[serviceId]; if(!data) return;
-            const card = document.querySelector('.highlight-card');
-            card.style.opacity = '0.5';
-            setTimeout(() => {
-                document.getElementById('svc-title').innerText = data.title;
-                document.getElementById('svc-desc').innerText = data.desc;
-                document.getElementById('svc-link').href = data.url;
-                // Troca a imagem
-                document.getElementById('svc-img').src = data.img;
-                
-                card.style.opacity = '1';
-            }, 200);
-            document.querySelectorAll('.svc-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active');
-        }
-        function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
-    </script>
-</body>
-</html>
+/* SERVIÇOS */
+#servicos { padding: 100px 0; background-color: #000000; color: var(--white); border-top: 5px solid var(--brand-yellow); }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: 2.5rem; color: var(--brand-yellow); margin-bottom: 15px; text-transform: uppercase; }
+.section-header p { color: #ccc; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+.services-layout { display: flex; gap: 50px; align-items: stretch; }
+.services-menu { flex: 0 0 350px; display: flex; flex-direction: column; gap: 10px; }
+.svc-btn { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid #333; padding: 18px 25px; border-radius: var(--radius); cursor: pointer; font-weight: 500; font-family: 'Roboto', sans-serif; text-align: left; transition: all 0.3s ease; display: flex; justify-content: space-between; align-items: center; }
+.svc-btn:hover { background: #222; padding-left: 30px; border-color: var(--brand-yellow); color: var(--brand-yellow); }
+.svc-btn.active { background: var(--brand-yellow); color: #000; border-color: var(--brand-yellow); font-weight: 800; box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); padding-left: 30px; }
+.services-content { flex: 1; }
+
+/* --- CARD DE DESTAQUE (COM IMAGEM DE FUNDO) --- */
+
+/* 1. O Container Principal */
+.highlight-card {
+    /* Removemos o background branco sólido */
+    background: #000; 
+    /* Mudamos a cor do texto padrão para branco */
+    color: var(--white); 
+    
+    padding: 50px;
+    border-radius: var(--radius);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    /* Mantemos o detalhe amarelo embaixo */
+    border-bottom: 5px solid var(--brand-yellow);
+    transition: opacity 0.2s ease;
+    
+    /* ESSENCIAIS PARA O EFEITO: */
+    position: relative;  /* Para a imagem absoluta ficar presa aqui dentro */
+    overflow: hidden;    /* Para cortar a imagem nas bordas arredondadas */
+    z-index: 1;          /* Cria um contexto de empilhamento */
+}
+
+/* 2. A Película Escura (Overlay) */
+/* Isso cria uma camada preta semitransparente sobre a foto */
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+    z-index: -1; /* Fica atrás do texto, mas na frente da imagem */
+}
+
+/* 3. A Imagem de Fundo */
+.highlight-card img {
+    position: absolute; /* Sai do fluxo normal */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche tudo sem distorcer */
+    z-index: -2; /* Fica na camada mais fundo de todas */
+    
+    /* Removemos as bordas e margens antigas */
+    border-radius: 0;
+    margin-bottom: 0;
+    border: none;
+    opacity: 0.6; /* Deixa a imagem um pouco mais suave */
+}
+
+/* 4. O Conteúdo (Texto e Botões) */
+/* Forçamos eles a ficarem na frente */
+.highlight-card h3,
+.highlight-card p,
+.card-actions {
+    position: relative;
+    z-index: 2; /* Camada superior */
+}
+
+/* Ajuste de cores do título e texto para branco */
+.highlight-card h3 { 
+    font-size: 2.5rem; 
+    margin-bottom: 25px; 
+    color: var(--brand-yellow); /* Título em amarelo para destaque */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.highlight-card p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--white); /* Texto descritivo em branco */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-bottom: 40px; /* Espaço antes dos botões */
+}
+
+/* ESPAÇAMENTO DO BOTÃO */
+.card-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    /* Removemos o margin-top gigante pois o layout agora é diferente */
+    margin-top: 20px; 
+}
+
+/* ESPAÇAMENTO DO BOTÃO (2cm / 80px) */
+.card-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    margin-top: 80px; /* AQUI ESTÁ O AJUSTE DE 2CM */
+}
+
+/* PÁGINAS INTERNAS */
+.page-header { background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.85) 100%), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; height: 300px; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); margin-top: 90px; }
+.services-gallery { padding: 80px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.service-box { background: var(--white); padding: 40px 30px; border-radius: var(--radius); text-align: center; text-decoration: none; color: var(--text-dark); transition: all 0.3s ease; border: 1px solid #eee; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; }
+.service-box:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); border-color: var(--brand-yellow); }
+.service-box i { font-size: 3rem; color: #000; margin-bottom: 20px; transition: 0.3s; }
+.service-box:hover i { color: var(--brand-yellow); transform: scale(1.1); }
+.cta-arrow { margin-top: 20px; font-weight: bold; color: #000; font-size: 0.9rem; text-transform: uppercase; }
+
+/* SINGLE CONTENT */
+.single-content { padding: 80px 0; max-width: 800px; margin: 0 auto; }
+.content-body h2 { color: #000; margin: 30px 0 15px; font-size: 1.8rem; }
+.content-body h3 { color: #000; margin: 25px 0 10px; font-size: 1.4rem; }
+.alert-box { background-color: #fff9c4; border-left: 5px solid var(--brand-yellow); padding: 20px; margin: 30px 0; border-radius: 4px; color: #333; }
+.big-cta { text-align: center; margin-top: 50px; padding: 40px; background: #fff; border: 1px solid #eee; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+
+/* CONTATO */
+#contato { padding: 100px 0; background: var(--bg-light); }
+.contact-box { background: var(--white); padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; }
+.icon-circle { width: 40px; height: 40px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--brand-yellow); }
+
+/* FOOTER */
+footer { background: #000000; color: #888; padding: 60px 0 30px; text-align: center; font-size: 0.9rem; border-top: 3px solid var(--brand-yellow); }
+footer strong { color: var(--brand-yellow); }
+.developer a:hover { color: var(--brand-yellow); text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+
+/* WHATSAPP */
+.whatsapp-link { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #fff; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 9999; display: flex; align-items: center; justify-content: center; text-decoration: none; animation: pulse 2s infinite; }
+.whatsapp-link:hover { background-color: #1ebc57; transform: scale(1.1); transition: 0.3s; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+@media (max-width: 900px) { .services-layout { flex-direction: column; } .contact-box { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { header .container { justify-content: space-between; } nav { width: 100%; gap: 0; justify-content: space-between; } .logo img { max-height: 50px; } .nav-links { display: none; position: absolute; top: 90px; left: 0; width: 100%; background: var(--white); flex-direction: column; padding: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); margin-left: 0; } .nav-links.active { display: flex; } .menu-toggle { display: block; } .hero-buttons { flex-direction: column; } .whatsapp-link { width: 50px; height: 50px; font-size: 25px; bottom: 20px; right: 20px; } }
