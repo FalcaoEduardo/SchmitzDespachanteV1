@@ -3,18 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schmitz Despachante | Caçador - SC</title>
-    <meta name="description" content="Regularize seu veículo em Caçador/SC. Licenciamento 2026, Transferência e IPVA em até 12x. Atendimento rápido no Martello.">
+    <title>Schmitz Despachante | Licenciamento e Transferência em Caçador - SC</title>
+    
+    <meta name="description" content="Regularize seu veículo em Caçador/SC com o Schmitz Despachante. Licenciamento 2026, Transferência, Primeiro Emplacamento e IPVA em até 12x. Atendimento rápido no bairro Martello.">
+    <meta name="keywords" content="despachante caçador, licenciamento sc, transferência de veículo, ipva parcelado, emplacamento caçador, schmitz despachante, renovação cnh">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SamisTech">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Schmitz Despachante | Regularize seu Veículo em Caçador">
+    <meta property="og:description" content="Resolva a documentação do seu veículo em menos de uma hora. Parcelamos débitos em até 12x. Clique e saiba mais!">
+    <meta property="og:image" content="logo.png"> 
+    <meta property="og:locale" content="pt_BR">
+    
+    <link rel="icon" href="logo.png" type="image/png">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Schmitz Despachante",
+      "image": "logo.png",
+      "telephone": "+5549991368740",
+      "url": "https://schmitzdespachante.com.br", 
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rod. Honorino Moro, 635 - Martello",
+        "addressLocality": "Caçador",
+        "addressRegion": "SC",
+        "postalCode": "89510-620",
+        "addressCountry": "BR"
+      },
+      "priceRange": "$$",
+      "description": "Serviços de despachante documental em Caçador/SC. Especialista em licenciamento, transferências, primeiro emplacamento e parcelamento de débitos."
+    }
+    </script>
 </head>
 <body>
+    <div id="modal-aviso" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">×</span>
+            <img src="aviso.png" alt="Aviso Importante Schmitz Despachante">
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <nav>
                 <a href="index.html" class="logo"><img src="logo.png" alt="Schmitz Despachante Logo"></a>
+                
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+                
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
                     <li><a href="#servicos">Nossos Serviços</a></li>
@@ -27,11 +70,18 @@
     </header>
 
     <section id="home">
-        <div class="container hero-content">
-            <h1>Resolva a documentação do seu veículo <span>tudo em menos de uma hora.</span></h1>
-            <p>Licenciamento, Transferência, IPVA, encaminhamento de Vistorias Veiculares, Placas Automotivas e muito mais. Atendemos toda Caçador e região com agilidade.</p>
-            <div class="hero-buttons">
-                <a href="#servicos" class="btn btn-outline">Conhecer Serviços</a>
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Resolva a documentação do seu veículo <span>sem sair de casa.</span></h1>
+                <p>Licenciamento, Transferência, IPVA, Placas e muito mais. Atendemos toda Caçador e região com a agilidade que você precisa.</p>
+                <div class="hero-buttons">
+                    <a href="servicos.html" class="btn btn-primary">Conhecer Serviços</a>
+                    <a href="https://wa.me/5549991368740" target="_blank" class="btn btn-outline">Chamar no WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="logo.png" alt="Schmitz Despachante Logo Oficial">
             </div>
         </div>
     </section>
@@ -48,18 +98,18 @@
                     <button class="svc-btn" onclick="openService('transferencia', this)">Transferência</button>
                     <button class="svc-btn" onclick="openService('caracteristicas', this)">Mudança de Características</button>
                     <button class="svc-btn" onclick="openService('licenciamento', this)">Licenciamento Anual</button>
-                    <button class="svc-btn" onclick="openService('ipva', this)">IPVA & Débitos</button>                    
+                    <button class="svc-btn" onclick="openService('ipva', this)">IPVA & Débitos</button>
+                    <button class="svc-btn" onclick="openService('cnh', this)">Renovação CNH</button>
                     <button class="svc-btn" onclick="openService('crv', this)">2ª Via Recibo (CRV)</button>
                     <button class="svc-btn" onclick="openService('dados', this)">Alteração de Dados</button>
                 </div>
                 <div class="services-content">
                     <div class="highlight-card">
-                        <img id="svc-img" src="https://garagem360.com.br/wp-content/uploads/2022/12/primeiro-emplacamento.jpg?auto=format&fit=crop&w=1000&q=80" alt="Imagem do Serviço">
-                        
                         <h3 id="svc-title">Primeiro Emplacamento</h3>
                         <p id="svc-desc">Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.</p>
                         <div class="card-actions">
-                            <a href="https://wa.me/5549991368740" target="_blank" id="svc-link" class="btn btn-primary">Tirar Dúvida</a>
+                            <a href="https://wa.me/5549991368740" id="svc-link" class="btn btn-primary">Saiba Mais</a>
+                           
                         </div>
                     </div>
                 </div>
@@ -79,7 +129,7 @@
                     <h3>Especialistas em Legislação de Trânsito</h3>
                     <p>Nosso time é formado por profissionais altamente qualificados na área de legislação de trânsito e regulação veicular. Com anos de experiência no mercado de Caçador e região, dominamos os trâmites do Detran para resolver seu problema com rapidez.</p>
                     <p>Entendemos que a burocracia pode ser cansativa. Por isso, nossa equipe trabalha de forma integrada para garantir que, desde o primeiro atendimento até a entrega do documento, você tenha uma experiência <strong>ágil, transparente e segura</strong>.</p>
-                    <a href="https://wa.me/5549991368740" class="btn btn-outline" style="margin-top: 20px; color: #000; border-color: #000;">Falar com a Equipe</a>
+                    <a href="#contato" class="btn btn-outline" style="margin-top: 20px; color: #000; border-color: #333;">Falar com a Equipe</a>
                 </div>
                 
                 <div class="team-photo-wrapper">
@@ -89,6 +139,7 @@
             </div>
         </div>
     </section>
+
     <section id="contato">
         <div class="container">
             <div class="contact-box">
@@ -119,33 +170,50 @@
 
     <script>
         const servicesData = {
-            'primeiro_emplacamento': { title: 'Primeiro Emplacamento (0km)', desc: 'Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.', url: 'https://wa.me/5549991368740', img: 'https://garagem360.com.br/wp-content/uploads/2022/12/primeiro-emplacamento.jpg?auto=format&fit=crop&w=1000&q=80' },
-            'caracteristicas': { title: 'Mudança de Características', desc: 'Rebaixou, blindou, mudou a cor ou trocou o combustível? Regularizamos todas as modificações permitidas por lei (CSV) no documento.', url: 'https://wa.me/5549991368740', img: 'https://theforkliftstore.com/cdn/shop/products/Painter4_1080x.jpg?v=1595964438?auto=format&fit=crop&w=1000&q=80' },
-            'transferencia': { title: 'Transferência de Veículo', desc: 'Comprou ou vendeu? Cuidamos da burocracia do Detran, vistoria e emissão do novo documento para garantir a segurança jurídica do negócio.', url: 'https://wa.me/5549991368740', img: 'https://www.atribunamt.com.br/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-14.11.52.jpeg?auto=format&fit=crop&w=1000&q=80' },
-            'licenciamento': { title: 'Licenciamento Anual', desc: 'Emitimos o seu licenciamento digital (CRLV-e) no mesmo dia. Verificamos multas e bloqueios que podem estar impedindo a emissão.', url: 'https://wa.me/5549991368740', img: 'https://i0.wp.com/www.reporteronlinelitoral.com.br/novo/wp-content/uploads/2021/01/detran1.jpg?fit=1024,768&ssl=1&w=640?auto=format&fit=crop&w=1000&q=80' },
-            'ipva': { title: 'Parcelamento de IPVA', desc: 'Parcelamos seus débitos de IPVA, Multas e Licenciamento em até 12x no cartão de crédito. Regularize sem pesar no bolso.', url: 'https://wa.me/5549991368740', img: 'https://www.detran.pr.gov.br/sites/default/arquivos_restritos/files/imagem/migrados/galeria/477/DSC_0028.JPG?auto=format&fit=crop&w=1000&q=80' },
-            'cnh': { title: 'Renovação de CNH', desc: 'Controlamos os prazos, agendamos exames médicos e psicotécnicos e acompanhamos a emissão da sua nova CNH.', url: 'https://wa.me/5549991368740', img: 'https://www.tvparaguacu.com.br/uploads/noticias/7154303012024085213.jpg?auto=format&fit=crop&w=1000&q=80' },
-            'crv': { title: '2ª Via do Recibo (CRV)', desc: 'Perdeu o recibo de compra e venda? Realizamos o processo de vistoria e solicitação da segunda via (ATPV-e) junto ao Detran.', url: 'https://wa.me/5549991368740', img: 'https://gringo.com.vc/wp-content/uploads/2020/10/CRV-1024x683.jpeg?auto=format&fit=crop&w=1000&q=80' },
-            'dados': { title: 'Atualização Cadastral', desc: 'Mantenha seu endereço atualizado, altere sobrenomes ou realize a inclusão/baixa de gravame (financiamento).', url: 'https://wa.me/5549991368740', img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=80' }
+            'primeiro_emplacamento': { title: 'Primeiro Emplacamento (0km)', desc: 'Comprou um carro zero km? Realizamos todo o procedimento de registro, emissão de taxas e autorização para estampagem das placas Mercosul.', url: 'https://wa.me/5549991368740' },
+            'caracteristicas': { title: 'Mudança de Características', desc: 'Rebaixou, blindou, mudou a cor ou trocou o combustível? Regularizamos todas as modificações permitidas por lei (CSV) no documento.', url: 'https://wa.me/5549991368740' },
+            'transferencia': { title: 'Transferência de Veículo', desc: 'Comprou ou vendeu? Cuidamos da burocracia do Detran, vistoria e emissão do novo documento para garantir a segurança jurídica do negócio.', url: 'https://wa.me/5549991368740' },
+            'licenciamento': { title: 'Licenciamento Anual', desc: 'Emitimos o seu licenciamento digital (CRLV-e) no mesmo dia. Verificamos multas e bloqueios que podem estar impedindo a emissão.', url: 'https://wa.me/5549991368740' },
+            'ipva': { title: 'Parcelamento de IPVA', desc: 'Parcelamos seus débitos de IPVA, Multas e Licenciamento em até 12x no cartão de crédito. Regularize sem pesar no bolso.', url: 'ipva.html' },
+            'cnh': { title: 'Renovação de CNH', desc: 'Controlamos os prazos, agendamos exames médicos e psicotécnicos e acompanhamos a emissão da sua nova CNH.', url: 'https://wa.me/5549991368740' },
+            'crv': { title: '2ª Via do Recibo (CRV)', desc: 'Perdeu o recibo de compra e venda? Realizamos o processo de vistoria e solicitação da segunda via (ATPV-e) junto ao Detran.', url: 'https://wa.me/5549991368740' },
+            'dados': { title: 'Atualização Cadastral', desc: 'Mantenha seu endereço atualizado, altere sobrenomes ou realize a inclusão/baixa de gravame (financiamento).', url: 'dhttps://wa.me/5549991368740' }
         };
         
         function openService(serviceId, btn) {
             const data = servicesData[serviceId]; if(!data) return;
-            const card = document.querySelector('.highlight-card');
-            card.style.opacity = '0.5';
-            setTimeout(() => {
-                document.getElementById('svc-title').innerText = data.title;
-                document.getElementById('svc-desc').innerText = data.desc;
-                document.getElementById('svc-link').href = data.url;
-                // Troca a imagem
-                document.getElementById('svc-img').src = data.img;
-                
-                card.style.opacity = '1';
-            }, 200);
+            const card = document.querySelector('.highlight-card'); card.style.opacity = '0.5';
+            setTimeout(() => { document.getElementById('svc-title').innerText = data.title; document.getElementById('svc-desc').innerText = data.desc; document.getElementById('svc-link').href = data.url; card.style.opacity = '1'; }, 200);
             document.querySelectorAll('.svc-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active');
         }
         function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
     </script>
-</body>
 
+    <script>
+        const modal = document.getElementById('modal-aviso');
+        if (!localStorage.getItem('avisoVisto')) {
+            modal.style.display = 'flex'; 
+        }
+        function fecharModal() {
+            modal.style.display = 'none';
+            localStorage.setItem('avisoVisto', 'true');
+        }
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharModal();
+            }
+        });
+    </script>
+
+    <script>
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled'); // Mostra o logo pequeno e a sombra
+            } else {
+                header.classList.remove('scrolled'); // Esconde o logo pequeno
+            }
+        });
+    </script>
+</body>
 </html>
